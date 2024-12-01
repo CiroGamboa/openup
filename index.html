@@ -23,13 +23,40 @@
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 1rem;
+            padding: 15px 40px;
+            /* Botón más grande */
+            font-size: 1.5rem;
+            /* Fuente más grande */
+            font-weight: bold;
+            /* Fuente más pesada */
             cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            background-color: #ccbaea;
+            /* Fondo pastel suave */
+            color: #4a4a4a;
+            /* Color del texto */
+            border: 2px solid #dcdcdc;
+            /* Borde gris claro */
+            border-radius: 12px;
+            /* Bordes ligeramente redondeados */
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra ligera */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            background-color: #e27f83;
+            /* Fondo pastel más oscuro al pasar el cursor */
+            transform: scale(1.05);
+            /* Animación ligera */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            /* Sombra más pronunciada */
+        }
+
+        button:active {
+            transform: scale(0.98);
+            /* Reducción al presionar */
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            /* Menor sombra */
         }
 
         img {
@@ -45,7 +72,7 @@
 
     <!-- Image Element -->
     <img src="pregunta.png" alt="A relevant image" />
-    <h1>Preguntas para conocernos mejor</h1>
+    <h1>WeOpenUp: Preguntas para conocernos mejor</h1>
     <div id="question">Esto está por ponerse interesante...</div>
     <button onclick="getQuestion()">Siguiente pregunta</button>
 
