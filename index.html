@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntitas clave</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #question {
+            margin: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 150px;
+            /* Adjust the size as needed */
+            margin-bottom: 20px;
+            /* Space between image and text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Image Element -->
+    <img src="pregunta.png" alt="A relevant image" />
+    <h1>Preguntas para conocernos mejor</h1>
+    <div id="question">Esto está por ponerse interesante...</div>
+    <button onclick="getQuestion()">Siguiente pregunta</button>
+
+    <script>
+        let questions = [];
+
+        // Fetch questions from the JSON file
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data.questions;
+            });
+
+        // Function to show a random question
+        function getQuestion() {
+            if (questions.length > 0) {
+                const randomIndex = Math.floor(Math.random() * questions.length);
+                document.getElementById('question').innerText = questions[randomIndex];
+            }
+        }
+    </script>
+
+</body>
+
+</html>
